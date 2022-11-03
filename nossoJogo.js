@@ -11,27 +11,27 @@
  * 
  */
 
-    const isStartRound = confirm("Quer iniciar uma nova rodada?")
+    const isActiveGame = confirm("Quer iniciar uma nova rodada?")
 
-    if (isStartRound) {
+    if (isActiveGame) {
       console.log("Boas vindas ao jogo Blackjack!")
 
-      const cartaJogador1 = comprarCarta()
-      const cartaJogador2 = comprarCarta()
+      const playerCard1 = comprarCarta()
+      const playerCard2 = comprarCarta()
 
-      const totalJogador = cartaJogador1.valor + cartaJogador2.valor
+      const playerTotal = playerCard1.valor + playerCard2.valor
       
-      const cartaComputador1 = comprarCarta()
-      const cartaComputador2 = comprarCarta()
+      const computerCard1 = comprarCarta()
+      const computerCard2 = comprarCarta()
       
-      const totalComputador = cartaComputador1.valor + cartaComputador2.valor
+      const computerTotal = computerCard1.valor + computerCard2.valor
 
-      console.log(`Jogador: cartas - ${cartaJogador1.texto} ${cartaJogador2.texto} pontuação: ${totalJogador}`)
-      console.log(`Computador: cartas - ${cartaComputador1.texto} ${cartaComputador2.texto} pontuação: ${totalComputador}`)
+      console.log(`Jogador: cartas - ${playerCard1.texto} ${playerCard2.texto} pontuação: ${playerTotal}`)
+      console.log(`Computador: cartas - ${computerCard1.texto} ${computerCard2.texto} pontuação: ${computerTotal}`)
 
-      if (totalJogador > totalComputador) {
+      if (playerTotal > computerTotal) {
          console.log("Jogador venceu!")
-      } else if (totalJogador < totalComputador) {
+      } else if (playerTotal < computerTotal) {
          console.log("Computador venceu!")         
       } else {
          console.log("Empate!")         
